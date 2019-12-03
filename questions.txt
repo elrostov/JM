@@ -1,0 +1,22 @@
+----------------------------------------------------------------
+@Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Pair) {
+			//Pair<?, ?> object = (Pair<?, ?>)obj; //как всё-таки правильно?
+			//Pair<?, ?> object = (Pair)obj;
+            Pair object = (Pair)obj;
+            return (first == null ? object.getFirst() == null : first.equals(object.getFirst()) &&
+                (second == null ? object.getSecond() == null : second.equals(object.getSecond())));
+        }
+        return false;
+    }
+​
+Pair<?, ?> object = (Pair<?, ?>)obj;
+Pair<?, ?> object = (Pair)obj;
+Pair object = (Pair)obj;
+
+
+----------------------------------------------------------------
+Почему так не работает?
+        System.out.println(mn.getClass() == MyNode.class);
+        System.out.println(mn.getClass() == Node.class);
